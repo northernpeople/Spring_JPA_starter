@@ -15,7 +15,7 @@ public class ItemRepo {
 	
 	public Item save(Item item)		{ em.persist(item); return item; }
 	
-	public void update(Item item)	{ em.merge(item); }
+	public Item update(Item item)	{ em.merge(item); return item; }
 	
 	public Item findById(Long id)	{ return em.find(Item.class, id); }
 	

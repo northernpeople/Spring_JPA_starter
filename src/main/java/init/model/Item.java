@@ -1,6 +1,11 @@
 package init.model;
 
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
@@ -12,6 +17,9 @@ public class Item {
 	private Long id;
 	
 	private String name;
+	
+	@ElementCollection(fetch = FetchType.EAGER)
+	private Set<String> tags =new HashSet<>();
 	
 	public Item() {}
 
@@ -35,16 +43,25 @@ public class Item {
 		this.name = name;
 	}
 
+	public Set<String> getTags() {
+		return tags;
+	}
+
+	public void setTags(Set<String> tags) {
+		this.tags = tags;
+	}
+
 	@Override
 	public String toString() {
-		return new StringBuilder()
-				.append("Item [id=")
-				.append(id)
-				.append(", name=")
-				.append(name)
-				.append("]")
-				.toString();
+		StringBuilder builder = new StringBuilder();
+		builder.append("Item [id=").append(id).append(", name=").append(name).append(", tags=").append(tags)
+				.append("]");
+		return builder.toString();
 	}
+	
+	
+
+	
 	
 	
 
