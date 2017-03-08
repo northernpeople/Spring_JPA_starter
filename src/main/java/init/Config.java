@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan(basePackages = {"init.model"})
+@ComponentScan(basePackages = {"init.*"})
 public class Config {
 	
 	@Bean

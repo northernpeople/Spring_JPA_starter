@@ -1,10 +1,12 @@
-package init.model;
+package init.model.repo;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
+
+import init.model.Item;
 
 @Repository
 @Transactional
