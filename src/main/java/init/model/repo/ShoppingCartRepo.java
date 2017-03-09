@@ -18,6 +18,14 @@ public class ShoppingCartRepo {
 	@PersistenceContext
 	private EntityManager em;
 	
+	
+	/*
+	
+	This method is intercepted by the transactional proxy. 
+	When transaction commits, JPA sets id on this entity. 
+	Therefore, after this method returns, we can use the entity to get id.
+	 
+	 */
 	public ShoppingCart save(ShoppingCart cart)		{ em.persist(cart); return cart; }
 	
 	public ShoppingCart update(ShoppingCart cart)	{ em.merge(cart); return cart; }

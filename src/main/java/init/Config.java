@@ -26,7 +26,7 @@ public class Config {
 		LocalContainerEntityManagerFactoryBean emfb = new LocalContainerEntityManagerFactoryBean();
 		emfb.setDataSource(dataSource);
 		emfb.setJpaVendorAdapter(jpaVendorAdapter);
-		emfb.setPackagesToScan("init.model");
+		emfb.setPackagesToScan("init.*");
 		return emfb;	
 	}
 	
