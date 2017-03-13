@@ -16,6 +16,19 @@ import org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcesso
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+/*
+
+DataSource    JPAVendorAdapter
+         \    /
+	  \  /
+   EntityManagerFactory
+            |
+	    |
+   TransactionManager
+   
+*/
+
+
 @Configuration
 @EnableTransactionManagement
 @ComponentScan(basePackages = {"init.*"})
